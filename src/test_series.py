@@ -4,17 +4,23 @@
 import pytest
 
 
-def test_fibonacci():
+FIBONACCI_TABLE = [
+    [1, 0],
+    [2, 1],
+    [3, 1],
+    [4, 2],
+    [5, 3],
+    [6, 5],
+    [7, 8],
+    [8, 13],
+]
+
+
+@pytest.mark.parametrize("m, n", FIBONACCI_TABLE)
+def test_fibonacci(m, n):
     """Test for fibonacci sequence."""
     import series
-    assert series.fibonacci(1) == 0
-    assert series.fibonacci(2) == 1
-    assert series.fibonacci(3) == 1
-    assert series.fibonacci(4) == 2
-    assert series.fibonacci(5) == 3
-    assert series.fibonacci(6) == 5
-    assert series.fibonacci(7) == 8
-    assert series.fibonacci(8) == 13
+    assert series.fibonacci(m) == n
 
 
 def test_lucas():
@@ -32,3 +38,12 @@ def test_lucas():
 
 def test_sum_series():
     """Test for sum series."""
+    import series
+    assert series.sum_series(1) == 0
+    assert series.sum_series(2) == 1
+    assert series.sum_series(3) == 1
+    assert series.sum_series(4) == 2
+    assert series.sum_series(5) == 3
+    assert series.sum_series(6) == 5
+    assert series.sum_series(7) == 8
+    assert series.sum_series(8) == 13
