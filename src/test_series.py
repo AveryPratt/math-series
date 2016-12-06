@@ -19,6 +19,15 @@ def test_fibonacci():
 
 def test_lucas():
     """Test for lucas sequence."""
+    import series
+    assert series.lucas(1) == 2
+    assert series.lucas(2) == 1
+    assert series.lucas(3) == 3
+    assert series.lucas(4) == 4
+    assert series.lucas(5) == 7
+    assert series.lucas(6) == 11
+    assert series.lucas(7) == 18
+    assert series.lucas(8) == 29
 
 
 def test_sum_series():
