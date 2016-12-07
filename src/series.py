@@ -39,19 +39,21 @@ def sum_series(n, first=0, second=1):
 	return sum_series(n - 1, second, second + first)
 
 if __name__ == "__main__":
-	print()
-	print(__doc__)
-	print("...")
-	print()
-	print("fibonacci(n):")
-	print()
-	print("    " + fibonacci.__doc__)
-	print()
-	print("lucas(n):")
-	print()
-	print("    " + lucas.__doc__)
-	print()
-	print("sum_series(n):")
-	print()
-	print("    " + sum_series.__doc__)
-	print()
+	output = """
+
+""" + __doc__ + """
+...
+
+fibonacci(n):
+
+    """ + fibonacci.__doc__ + """
+
+lucas(n):
+
+    """ + lucas.__doc__ + """
+
+sum_series(n):
+
+    """ + sum_series.__doc__
+
+	print(output)
