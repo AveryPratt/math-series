@@ -9,11 +9,10 @@ def fibonacci(n):
 	elif n == 2:
 	    return second
 	else:
-	    for num in range(n - 2):
-	        third = first + second
-	        first = second
-	        second = third
-	    return second
+		for num in range(n - 2):
+			second = second + first
+			first = second - first
+		return second
 
 
 def lucas(n):
@@ -25,11 +24,10 @@ def lucas(n):
 	elif n == 2:
 	    return second
 	else:
-	    for num in range(n - 2):
-	        third = first + second
-	        first = second
-	        second = third
-	    return second
+		for num in range(n - 2):
+			second = second + first
+			first = second - first
+		return second
 
 
 def sum_series(n, first=0, second=1):
