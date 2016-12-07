@@ -1,4 +1,4 @@
-"""Test for fibonacci and lucas sequences."""
+"""Tests for fibonacci and lucas sequences."""
 
 
 import pytest
@@ -15,35 +15,46 @@ FIBONACCI_TABLE = [
     [8, 13],
 ]
 
+LUCAS_TABLE = [
+    [1, 2],
+    [2, 1],
+    [3, 3],
+    [4, 4],
+    [5, 7],
+    [6, 11],
+    [7, 18],
+    [8, 29],
+]
 
-@pytest.mark.parametrize("m, n", FIBONACCI_TABLE)
-def test_fibonacci(m, n):
+SUM_SERIES_TABLE = [
+    [1, 0, 2],
+    [2, 1, 1],
+    [3, 1, 3],
+    [4, 2, 4],
+    [5, 3, 7],
+    [6, 5, 11],
+    [7, 8, 18],
+    [8, 13, 29],
+]
+
+
+@pytest.mark.parametrize("idx, fib", FIBONACCI_TABLE)
+def test_fibonacci(idx, fib):
     """Test for fibonacci sequence."""
     import series
-    assert series.fibonacci(m) == n
+    assert series.fibonacci(idx) == fib
 
 
-def test_lucas():
+@pytest.mark.parametrize("idx, luc", LUCAS_TABLE)
+def test_lucas(idx, luc):
     """Test for lucas sequence."""
     import series
-    assert series.lucas(1) == 2
-    assert series.lucas(2) == 1
-    assert series.lucas(3) == 3
-    assert series.lucas(4) == 4
-    assert series.lucas(5) == 7
-    assert series.lucas(6) == 11
-    assert series.lucas(7) == 18
-    assert series.lucas(8) == 29
+    assert series.lucas(idx) == luc
 
 
-def test_sum_series():
+@pytest.mark.parametrize("idx, fib, luc", SUM_SERIES_TABLE)
+def test_sum_series(idx, fib, luc):
     """Test for sum series."""
     import series
-    assert series.sum_series(1) == 0
-    assert series.sum_series(2) == 1
-    assert series.sum_series(3) == 1
-    assert series.sum_series(4) == 2
-    assert series.sum_series(5) == 3
-    assert series.sum_series(6) == 5
-    assert series.sum_series(7) == 8
-    assert series.sum_series(8) == 13
+    assert series.sum_series(idx) == fib
+    assert series.sum_series(idx, 2, 1) == luc
