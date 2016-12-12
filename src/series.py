@@ -5,14 +5,13 @@ def fibonacci(n):
 	first = 0
 	second = 1
 	if n == 1:
-	    return first
+		return first
 	elif n == 2:
-	    return second
-	else:
-		for num in range(n - 2):
-			second = second + first
-			first = second - first
 		return second
+	for num in range(n - 2):
+		second = second + first
+		first = second - first
+	return second
 
 
 def lucas(n):
@@ -23,11 +22,10 @@ def lucas(n):
 	    return first
 	elif n == 2:
 	    return second
-	else:
-		for num in range(n - 2):
-			second = second + first
-			first = second - first
-		return second
+	for num in range(n - 2):
+		second = second + first
+		first = second - first
+	return second
 
 
 def sum_series(n, first=0, second=1):
