@@ -41,20 +41,20 @@ SUM_SERIES_TABLE = [
 @pytest.mark.parametrize("idx, fib", FIBONACCI_TABLE)
 def test_fibonacci(idx, fib):
     """Test for fibonacci sequence."""
-    import series
-    assert series.fibonacci(idx) == fib
+    from series import fibonacci
+    assert fibonacci(idx) == fib
 
 
 @pytest.mark.parametrize("idx, luc", LUCAS_TABLE)
 def test_lucas(idx, luc):
     """Test for lucas sequence."""
-    import series
-    assert series.lucas(idx) == luc
+    from series import lucas
+    assert lucas(idx) == luc
 
 
 @pytest.mark.parametrize("idx, fib, luc", SUM_SERIES_TABLE)
 def test_sum_series(idx, fib, luc):
     """Test for sum series."""
-    import series
-    assert series.sum_series(idx) == fib
-    assert series.sum_series(idx, 2, 1) == luc
+    from series import sum_series
+    assert sum_series(idx) == fib
+    assert sum_series(idx, 2, 1) == luc
